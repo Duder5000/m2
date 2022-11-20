@@ -19,7 +19,7 @@ public class WebViewActivity extends AppCompatActivity {
         myWebView = (WebView)findViewById(R.id.webView);
         myWebView.getSettings().setJavaScriptEnabled(true);
         myWebView.setWebViewClient(new WebViewClient());
-        myWebView.loadUrl("https://google.ca");
+        myWebView.loadUrl("http://google.ca");
     }
 
 //    @Override
@@ -32,14 +32,3 @@ public class WebViewActivity extends AppCompatActivity {
 //        return super.onKeyDown(keyCode, event);
 //    }
 }
-
-//    public boolean onKeyDown(int keyCode, KeyEvent event) {
-//        if ((keyCode == KeyEvent.KEYCODE_BACK) && myWebView.canGoBack())
-//        {
-//            myWebView.goBack();
-//            return true;
-//        }
-//        return super.onKeyDown(keyCode, event);
-//    }
-
-//}

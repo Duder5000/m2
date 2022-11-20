@@ -8,30 +8,30 @@
     tools:context="com.example.hserban.lecture8_samplecode.MainActivity">
 
     <Button
-        android:id="@+id/goToNewCampaign"
+        android:id="@+id/button1"
         android:layout_width="match_parent"
         android:layout_gravity="center"
         android:layout_margin="10dp"
-        android:onClick="goToNewCampaign"
+        android:onClick="webView"
         android:layout_height="wrap_content"
-        android:text="New Campaign" />
+        android:text="WebView Example" />
 
     <Button
-        android:id="@+id/goToOldCampaigns"
+        android:id="@+id/button2"
         android:layout_width="match_parent"
         android:layout_gravity="center"
         android:layout_margin="10dp"
         android:layout_height="wrap_content"
-        android:onClick="goToOldCampaigns"
-        android:text="Existing Campaigns" />
+        android:onClick="networkOperations"
+        android:text="Network Operations Example" />
 
     <Button
-        android:id="@+id/goToRoller"
+        android:id="@+id/button3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:onClick="goToRoller"
+        android:onClick="currentWeather"
         android:layout_gravity="center"
-        android:text="Dice roller" />
+        android:text="Current Weather" />
 
 </LinearLayout>

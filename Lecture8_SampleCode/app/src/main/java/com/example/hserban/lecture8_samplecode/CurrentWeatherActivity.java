@@ -25,7 +25,7 @@ import java.net.URL;
 
 public class CurrentWeatherActivity extends AppCompatActivity {
 
-    TextView txtWeatherDisplay, txtTemp, txtLocation , cCode;
+    TextView txtWeatherDisplay, txtTemp, txtLocation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +36,6 @@ public class CurrentWeatherActivity extends AppCompatActivity {
         txtWeatherDisplay = (TextView) findViewById(R.id.textView2);
         txtLocation = (TextView)findViewById(R.id.textView3);
         txtTemp = (TextView)findViewById(R.id.textView4);
-        cCode = (TextView)findViewById(R.id.textView5);
     }
 
     public void buttonGetWeather(View view) {
@@ -125,9 +124,7 @@ public class CurrentWeatherActivity extends AppCompatActivity {
         }
 
         protected void onPostExecute(String result) {
-            Log.d("ReadWeatherJSONDataTask", "Starting onPostEx");
             try {
-                Log.d("ReadWeatherJSONDataTask", "In Try");
                 JSONObject jsonObject = new JSONObject(result);
                 JSONObject weatherObservationItems =
                         new JSONObject(jsonObject.getString("weatherObservation"));
@@ -139,12 +136,9 @@ public class CurrentWeatherActivity extends AppCompatActivity {
                 txtLocation.setText("LOCATION: " + weatherObservationItems.getString("stationName"));
                 txtTemp.setText("TEMPERATURE: " + weatherObservationItems.getString("temperature"));
                 txtWeatherDisplay.setText("FULL INFO: " + weatherObservationItems.toString());
-                cCode.setText("Country Code: " + weatherObservationItems.getString("countryCode"));
             } catch (Exception e) {
-                Log.d("ReadWeatherJSONDataTask", "In Try");
                 Log.d("ReadWeatherJSONDataTask", e.getLocalizedMessage());
             }
-            Log.d("ReadWeatherJSONDataTask", "End of onPostEx");
         }
     }
 
